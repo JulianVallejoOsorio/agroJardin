@@ -1,8 +1,119 @@
 /* Se resetea el margin y pading, ademas de importar y añadir el font family */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
-*{
+
+/* Colores de la paleta previamente seleccionada */
+:root {
+    --black: #000000;
+    /*color para algunos de los textos*/
+    --white: #ffffff;
+    /*color para el fondo de la pagina*/
+    --green: #0c815e;
+    /*color para los botones combinados con el negro*/
+    --lightgreen: #d3f8e5;
+    /*color para algunos de los fondos como el search*/
+    --darkgreen: #0b5a45;
+    /*color para algunos de los textos*/
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lora', serif;
+}
+
+body {
+    background-color: var(--green);
+}
+
+/* Mensaje informativo */
+.headerInfo {
+    background-color: var(--lightgreen);
+    text-align: end;
+}
+
+.headerInfo p {
+    color: var(--black);
+    font-weight: 600;
+    padding: 5px 25px 5px 0px;
+}
+
+/*Contenedor de la navbar*/
+.container_navbar {
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    max-width: 1440px;
+    padding: 0 20px;
+}
+
+.navbar_logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar_logo img {
+    height: 50px;
+    margin-right: 5px;
+}
+
+.navbar_logo span {
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--black);
+}
+
+.navbar_nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar_nav>* {
+    margin-left: 40px;
+}
+
+.navbar_links {
+    display: flex;
+    list-style: none;
+
+}
+
+.navItems {
+    margin-left: 40px;
+    font-size: .95 rem;
+    font-weight: 500;
+}
+
+.navItems a{
+    color: var(--black);
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navItems a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--green);
+    opacity: 0;
 }

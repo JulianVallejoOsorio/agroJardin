@@ -1,5 +1,13 @@
 /* Se resetea el margin y pading, ademas de importar y añadir el font family */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+/* Colores de la paleta previamente seleccionada */
+:root{
+    --black: #000000; /*color para algunos de los textos*/
+    --white: #ffffff; /*color para el fondo de la pagina*/
+    --green: #0c815e; /*color para los botones combinados con el negro*/
+    --lightgreen: #d3f8e5; /*color para algunos de los fondos como el search*/
+    --darkgreen: #0b5a45; /*color para algunos de los textos*/
+} 
 *{
     margin: 0;
     padding: 0;
