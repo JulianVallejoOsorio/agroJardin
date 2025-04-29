@@ -1,16 +1,26 @@
 /* Se resetea el margin y pading, ademas de importar y añadir el font family */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 /* Colores de la paleta previamente seleccionada */
-:root{
-    --black: #000000; /*color para algunos de los textos*/
-    --white: #ffffff; /*color para el fondo de la pagina*/
-    --green: #0c815e; /*color para los botones combinados con el negro*/
-    --lightgreen: #d3f8e5; /*color para algunos de los fondos como el search*/
-    --darkgreen: #0b5a45; /*color para algunos de los textos*/
-} 
-*{
+:root {
+    /* Color para el fondo de la navbar */
+    --whitegrey: #f9fafb;
+    /*color para algunos de los textos*/
+    --black: #000000;
+    /*color para el fondo de la pagina*/
+    --white: #ffffff;
+    /*color para los botones combinados con el negro*/
+    --green: #0c815e;
+    /*color para algunos de los fondos como el search*/
+    --lightgreen: #edfcf5;
+    /*color para algunos de los textos*/
+    --darkgreen: #0b5a45;
+
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lora', serif;
+    font-family: "Inter", sans-serif;
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <!-- Referencia hoja de estilos de el index (homePage) -->
-    <link rel="stylesheet" href="/src/styles/index.css">
+    <link rel="stylesheet" href="/src/styles/style.css">
 </head>
 
 <body>
@@ -37,12 +37,34 @@
                         <li class="navItems">
                             <a href="#">Sobre nosotros</a>
                         </li>
-
-                        <!-- Formulario de busqueda -->
-                        <form action="" class="navbar_search">
-                            <input type="text" placeholder="Buscar productos" class="search_input">
-                            <button type="submit" class="search_button">Buscar</button>
-                        </form>
+                </div>
+                <div class="navbar_tools">
+                    <!-- Botones  -->
+                    <button class="navbar_btn_icons">
+                        <img src="/src/images/svg_icons/heart.svg" alt="favoritos">
+                    </button>
+                    <button class="navbar_btn_icons">
+                        <img src="/src/images/svg_icons/shopping-cart.svg" alt="carrito de compra">
+                    </button>
+                    <button class="navbar_btn_icons">
+                        <img src="/src/images/svg_icons/user.svg" alt="boton de usuario">
+                    </button>
+                    <button class="navbar__toogle-btn">
+                        <img src="/src/images/svg_icons/menu.svg" alt="boton de menu">
+                    </button>
+                    <!-- Menu mobile -->
+                    <div class="mobile">
+                        <ul class="navbar_links-mobile">
+                            <li class="navItems-mobile">
+                                <a href="#">Inicio</a>
+                            </li>
+                            <li class="navItems-mobile">
+                                <a href="#">Catalogo</a>
+                            </li>
+                            <li class="navItems-mobile">
+                                <a href="#">Sobre nosotros</a>
+                            </li>
+                    </div>
                 </div>
             </nav>
         </section>

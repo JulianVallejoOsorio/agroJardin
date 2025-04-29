@@ -1,0 +1,269 @@
+/* Se resetea el margin y pading, ademas de importar y añadir el font family */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Colores de la paleta previamente seleccionada */
+:root {
+    /* Color para el fondo de la navbar */
+    --whitegrey: #f9fafb;
+    /*color para algunos de los textos*/
+    --black: #000000;
+    /*color para el fondo de la pagina*/
+    --white: #ffffff;
+    /*color para los botones combinados con el negro*/
+    --green: #0c815e;
+    /*color para algunos de los fondos como el search*/
+    --lightgreen: #edfcf5;
+    /*color para algunos de los textos*/
+    --darkgreen: #0b5a45;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background-color: var();
+}
+
+/* Mensaje informativo */
+.headerInfo {
+    background-color: var(--lightgreen);
+    text-align: end;
+    overflow: hidden;
+}
+
+.headerInfo p {
+    color: var(--black);
+    font-weight: 600;
+    padding: 5px 25px 5px 0px;
+    white-space: nowrap;
+    animation: moveText 40s linear infinite;
+}
+
+/* Efecto del mensaje informativo */
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/*Contenedor de la navbar*/
+.container_navbar {
+    background-color: var(--whitegrey);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    max-width: 1440px;
+    padding: 0 20px;
+}
+
+/* Logo de la navbar */
+
+.navbar_logo {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+}
+
+.navbar_logo img {
+    height: 50px;
+    margin-right: 5px;
+}
+
+.navbar_logo span {
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--black);
+    align-self: center;
+}
+
+.navbar_nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar_nav>* {
+    margin-left: 40px;
+}
+
+/* Links de la navbar */
+
+.navbar_links {
+    display: flex;
+    list-style: none;
+}
+
+.navItems {
+    margin-left: 40px;
+    font-size: .95 rem;
+    font-weight: 500;
+
+}
+
+.navItems a {
+    color: var(--black);
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Efectos de la navbar */
+.navItems a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: var(--green);
+    opacity: 0;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.navItems:hover a::after {
+    opacity: 1;
+    width: 100%;
+    left: 0;
+
+}
+
+
+
+/* Botones */
+.navbar_tools {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.navbar_tools img{
+    width: 25px;
+}
+
+.navbar_btn_icons{
+    background-color: transparent;
+    width: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar_btn_icons img{
+    padding: .5px;
+}
+.navbar__toogle-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+/* media query para quitar menu mobile */
+
+@media only screen and (min-width:895px) {
+    .mobile {
+        display: none;
+    }
+}
+
+/* media query del menu mobile */
+@media only screen and (max-width:895px) {
+    .navbar_links {
+        display: none;
+    }
+
+    .navbar nav>* {
+        margin-left: 20px;
+    }
+
+    .mobile {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 81.9px;
+        right: 0;
+        background-color: var(--white);
+        width: 100%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    .navItems-mobile {
+        margin-left: 40px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+
+    .navItems-mobile {
+        list-style: none;
+        padding: 6px;
+        margin-bottom: 16px;
+
+    }
+
+    .navItems-mobile a {
+        color: var(--black);
+        position: relative;
+    }
+
+    .navbar__toogle-btn {
+        display: block;
+        margin: 0;
+    }
+
+    .navbar__toogle-btn img {
+        height: 28px;
+        margin: 0 10px;
+    }
+
+    /* Efectos */
+    .navItems-mobile a::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        background-color: var(--green);
+        opacity: 0;
+        transition: width 0.3s ease-in-out, left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .navItems-mobile:hover a::after {
+        opacity: 1;
+        width: 100%;
+        left: 0;
+
+    }
+}
+
+@media only screen and (max-width:428px){
+    .navbar_btn_icons{
+        display: none;
+    }
+}
+
