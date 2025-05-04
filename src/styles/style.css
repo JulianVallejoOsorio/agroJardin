@@ -35,7 +35,7 @@
 
 .headerInfo p {
     color: var(--black);
-    font-weight: 600;
+    font-weight: 500;
     padding: 5px 25px 5px 0px;
     white-space: nowrap;
     animation: moveText 40s linear infinite;
@@ -69,20 +69,12 @@
 .navbar_logo {
     display: flex;
     align-items: start;
-    gap: 10px;
 }
 
 .navbar_logo img {
-    height: 50px;
+    max-height: 50px;
+    object-fit: contain;
     margin-right: 5px;
-}
-
-.navbar_logo span {
-    font-weight: 900;
-    font-style: italic;
-    font-size: 1.5rem;
-    color: var(--black);
-    align-self: center;
 }
 
 .navbar_nav {
@@ -139,15 +131,22 @@ a {
 
 
 /* Botones */
-.navbar_tools {
+.navbar_tools{
     display: flex;
     align-items: center;
+}
+
+.navbar_tools-icons {
+    display: flex;
+    align-items: center;
+    list-style: none;
     gap: 6px;
 }
 
 .navbar_tools img {
     width: 25px;
 }
+
 
 .navbar_btn_icons {
     background-color: transparent;
@@ -165,4 +164,153 @@ a {
     border: none;
     cursor: pointer;
     display: none;
+}
+
+.navbar_icons {
+    margin-left: 15px;
+}
+
+.navbar_icons a {
+    color: var(--black);
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Efectos de los botones */
+.navbar_icons a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -1px;
+    left: 50%;
+    background-color: var(--green);
+    opacity: 0;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.navbar_icons:hover a::after {
+    opacity: 1;
+    width: 100%;
+    left: 0;
+
+}
+
+/* Footer section */
+footer {
+    background-color: var(--green);
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_sections {
+    background-color: var(--lightgreen);
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_sections-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.container {
+    max-width: 1440px;
+    padding: 0 20px;
+}
+
+.footer_section-table {
+    list-style: none;
+}
+
+.footer_section-title {
+    color: var(--darkgreen);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Links o enlaces */
+.footerlinks {
+    margin-bottom: 0.2rem;
+}
+
+.footer_link {
+    color: var(--black);
+    font-size: 1.1rem;
+}
+
+/* Iconos */
+.social_container {
+    margin-bottom: 1rem;
+}
+
+.social_icon {
+    margin-right: 15px;
+
+}
+
+.social_icon img {
+    height: 28px;
+}
+
+/* Formulario */
+.suscribe_container-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.suscribe_container-input {
+    margin-bottom: 1rem;
+}
+
+.input {
+    border: none;
+    font-size: 1.1rem;
+    background-color: var(--white);
+    padding: 10px;
+    outline: none;
+    border-radius: 5px;
+}
+
+/* Boton */
+.button {
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.button_primary {
+    color: var(--black);
+    background-color: var(--darkgreen);
+}
+
+.suscribe_container-button {
+    text-align: center;
+    width: 150px;
+}
+
+/*  efectos */
+.footer_link:hover {
+    color: var(--darkgreen)
+}
+
+.button_primary:hover {
+    background-color: var(--green);
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Footer copyright */
+.footer_copy-text {
+    text-align: center;
+    color: var(--white);
+    font-weight: 500;
+    padding: 20px 0;
 }

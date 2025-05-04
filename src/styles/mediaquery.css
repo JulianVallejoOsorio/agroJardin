@@ -8,6 +8,7 @@
 
 /* media query del menu mobile */
 @media only screen and (max-width:895px) {
+    /* Navbar */
     .navbar_links {
         display: none;
     }
@@ -76,10 +77,24 @@
         left: 0;
 
     }
+
+    /* Footer */
+    .footer_section{
+        width: 49%;
+        margin-bottom: 1.5rem;
+    }
 }
 
-@media only screen and (max-width:428px) {
+@media only screen and (max-width:400px) {
+    /* Navbar */
+    .navbar_tools-icons{
+        display: none;
+    }
     .navbar_btn_icons {
         display: none;
+    }
+    /* Footer */
+    .footer_section{
+        width: 100%;
     }
 }
