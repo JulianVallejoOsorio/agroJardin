@@ -288,7 +288,7 @@ footer {
 }
 
 .button_primary {
-    color: var(--black);
+    color: var(--white);
     background-color: var(--darkgreen);
 }
 

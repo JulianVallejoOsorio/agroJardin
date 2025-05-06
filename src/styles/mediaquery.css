@@ -13,6 +13,10 @@
         display: none;
     }
 
+    .buttons{
+        display: none;
+    }
+
     .navbar nav>* {
         margin-left: 20px;
     }
@@ -78,6 +82,16 @@
 
     }
 
+    /* Products section */
+    .products_section-container{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .products_section-container .card{
+        margin: 20px;
+    }
+
     /* Footer */
     .footer_section{
         width: 49%;
@@ -87,6 +101,10 @@
 
 @media only screen and (max-width:400px) {
     /* Navbar */
+    .buttons{
+        display: flex;
+    }
+
     .navbar_tools-icons{
         display: none;
     }
