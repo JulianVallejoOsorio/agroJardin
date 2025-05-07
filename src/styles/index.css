@@ -28,6 +28,16 @@
 }
 
 /* Cards productos y accesorios */
+/* Titulo */
+.product_section h2{
+    text-align: center;
+    letter-spacing: 0.2rem;
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
 .products_section-container {
     display: flex;
     align-items: center;
@@ -44,7 +54,7 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: .4s ease;
 }
-
+/* Efecto del card */
 .card:hover{
     transform: scale(1.05);
 }
@@ -61,11 +71,11 @@
 .card .card-img img{
     width: 100%;
 }
-
+/* Efecto del card */
 .card:hover .card-img img{
     transform: scale(1.02);
 }
-
+/* descripcion del card */
 .card-detail{
     height: 120px;
     padding: 10px;
@@ -82,7 +92,7 @@
     color: var(--gray);
     font-weight: 200;
 }
-
+/* Boton y precio */
 .card-button{
     display: flex;
     justify-content: space-evenly;
@@ -106,7 +116,7 @@
     cursor: pointer;
     background-color: var(--darkgreen);
 }
-
+/* Efecto del boton */
 .car-btn:hover{
     background-color: var(--green);
     transition: background-color 0.3s ease-in-out;
