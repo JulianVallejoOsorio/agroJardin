@@ -68,12 +68,12 @@
 
 .card-detail{
     height: 120px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .card .card-detail h3{
     font-size: 22px;
-    margin-top: 20px;
+    margin-top: 1px;
     font-weight: 300;
 }
 .card .card-detail p{
