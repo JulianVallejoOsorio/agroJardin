@@ -1,32 +1,27 @@
-const productos = [
-  { id: 1, nombre: 'Abono Orgánico', descripcion: 'Mejora el suelo.', precio: 25000, imagen: 'https://github.com/JulianVallejoOsorio/agroJardin/blob/main/src/images/carrousel_images/pala.png?raw=true' },
-  { id: 2, nombre: 'Pala Jardín', descripcion: 'Herramienta resistente.', precio: 50000, imagen: 'https://github.com/JulianVallejoOsorio/agroJardin/blob/main/src/images/carrousel_images/pala.png?raw=true' },
-  { id: 3, nombre: 'Fertilizante Líquido', descripcion: 'Nutre tus plantas.', precio: 30000, imagen: 'https://github.com/JulianVallejoOsorio/agroJardin/blob/main/src/images/carrousel_images/pala.png?raw=true' }
-];
+const apiUrl = 'http://127.0.0.1:5000/api/products'; // Asegúrate de que esta URL esté correcta
 
+// Inicialización de variables
+let productos = [];
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-function agregarAlCarrito(id) {
-  const producto = productos.find(p => p.id === id);
-  // Volver a cargar el carrito actualizado del localStorage
-  carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-  const existe = carrito.find(p => p.id === id);
-  if (existe) {
-    existe.cantidad += 1;
-  } else {
-    carrito.push({ ...producto, cantidad: 1 });
+// Función para cargar los productos desde el backend
+async function cargarProductos() {
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error('Error al obtener los productos');
+    }
+    productos = await response.json();
+    renderProductos();
+  } catch (error) {
+    console.error('Error en la carga de productos:', error);
   }
-  localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-
-function guardarCarrito() {
-  localStorage.setItem('carrito', JSON.stringify(carrito));
-}
-
+// Función para renderizar los productos en el HTML
 function renderProductos() {
   const container = document.getElementById('productos-container');
-  container.innerHTML = '';
+  container.innerHTML = ''; // Limpiar el contenedor antes de agregar los productos
   productos.forEach(p => {
     const card = document.createElement('article');
     card.className = 'card';
@@ -47,6 +42,7 @@ function renderProductos() {
   });
 }
 
+// Función para agregar un producto al carrito
 function agregarAlCarrito(id) {
   const producto = productos.find(p => p.id === id);
   const existe = carrito.find(p => p.id === id);
@@ -59,4 +55,15 @@ function agregarAlCarrito(id) {
   alert(`${producto.nombre} añadido al carrito`);
 }
 
-renderProductos();
+// Función para guardar el carrito en el LocalStorage
+function guardarCarrito() {
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+// Función para cargar el carrito desde el LocalStorage
+function cargarCarrito() {
+  carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+}
+
+// Ejecutar la función de carga de productos al cargar la página
+cargarProductos();
