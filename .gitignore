@@ -1,0 +1,11 @@
+# Ignorar la carpeta 'backend'
+backend/
+
+# Ignorar la carpeta '.vscode' (configuración de Visual Studio Code)
+.vscode/
+
+# Ignorar el directorio '__pycache__' (archivos de caché de Python)
+__pycache__/
+
+# Ignorar la carpeta 'venv' (entorno virtual de Python)
+venv/
