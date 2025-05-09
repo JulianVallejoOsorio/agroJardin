@@ -47,4 +47,46 @@ function actualizarCantidad(id, nuevaCantidad) {
   }
 }
 
+function finalizarCompra() {
+  if (carrito.length === 0) {
+    alert("Tu carrito está vacío.");
+    return;
+  }
+
+  const total = carrito.reduce((acc, p) => acc + (p.precio * p.cantidad), 0);
+
+  const ventaData = {
+    total: total,
+    estado: 'Pendiente',
+    productos: carrito.map(p => ({
+      id_producto: p.id,
+      cantidad: p.cantidad,
+      precio: p.precio
+    }))
+  };
+
+  fetch('http://localhost:5000/api/ventas', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(ventaData)
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.message === "Venta registrada correctamente") {
+      alert(`Compra realizada con éxito. ID de la venta: ${data.venta_id}`);
+      localStorage.removeItem('carrito');
+      renderCarrito();
+      window.location.href = "/index.html"; // Ajusta esta ruta si tu archivo tiene otro nombre
+    } else {
+      alert("Hubo un error al realizar la compra.");
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert("Error al procesar la compra.");
+  });
+}
+
 renderCarrito();

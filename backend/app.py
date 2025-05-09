@@ -1,9 +1,11 @@
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS 
+import datetime
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
+
 # Configuración de la base de datos con autenticación de Windows
 app.config['SQLALCHEMY_DATABASE_URI'] = (
     'mssql+pyodbc://@DESKTOP-UT15PH2/AgroJardin?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes'
@@ -20,6 +22,23 @@ class Producto(db.Model):
     descripcion = db.Column(db.Text)
     precio = db.Column(db.Numeric(10, 2))
     imagen = db.Column(db.String(255))
+
+# Modelos
+class Venta(db.Model):
+    __tablename__ = 'ventas'
+    id = db.Column(db.Integer, primary_key=True)
+    fecha = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+    total = db.Column(db.Numeric(10, 2))
+    estado = db.Column(db.String(50))
+
+class DetalleVenta(db.Model):
+    __tablename__ = 'detalleventas'
+    id = db.Column(db.Integer, primary_key=True)
+    id_venta = db.Column(db.Integer, db.ForeignKey('ventas.id'))
+    id_producto = db.Column(db.Integer)
+    cantidad = db.Column(db.Integer)
+    precio = db.Column(db.Numeric(10, 2))
+
 
 # Ruta de prueba
 @app.route('/api/test')
@@ -43,6 +62,34 @@ def get_products():
         return jsonify(resultado)
     except Exception as e:
         return jsonify({"message": f"Error al obtener los productos: {str(e)}"}), 500
+
+# Ruta para registrar una venta
+@app.route('/api/ventas', methods=['POST'])
+def registrar_venta():
+    try:
+        data = request.get_json()
+        total = data['total']
+        estado = data['estado']
+        productos = data['productos']
+
+        venta = Venta(total=total, estado=estado)
+        db.session.add(venta)
+        db.session.flush()  # Obtener ID antes de commit
+
+        for p in productos:
+            detalle = DetalleVenta(
+                id_venta=venta.id,
+                id_producto=p['id_producto'],
+                cantidad=p['cantidad'],
+                precio=p['precio']
+            )
+            db.session.add(detalle)
+
+        db.session.commit()
+        return jsonify({"message": "Venta registrada correctamente", "venta_id": venta.id}), 201
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"message": f"Error al registrar la venta: {str(e)}"}), 500
 
 # Ruta para crear un nuevo producto
 @app.route('/api/products', methods=['POST'])
@@ -98,6 +145,7 @@ def delete_product(id):
     except Exception as e:
         db.session.rollback()
         return jsonify({"message": f"Error al eliminar el producto: {str(e)}"}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True)
