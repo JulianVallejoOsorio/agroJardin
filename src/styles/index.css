@@ -70,6 +70,7 @@
 
 .card .card-img img{
     width: 100%;
+    overflow: hidden;
 }
 /* Efecto del card */
 .card:hover .card-img img{

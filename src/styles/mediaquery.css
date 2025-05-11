@@ -6,6 +6,20 @@
     }
 }
 
+@media only screen and (min-width:1400px) {
+    /* Products section */
+    .products_section-container{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .products_section-container .card{
+        margin: 20px;
+    }
+}
+
+
+
 /* media query del menu mobile */
 @media only screen and (max-width:895px) {
     /* Navbar */
