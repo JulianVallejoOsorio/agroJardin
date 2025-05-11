@@ -47,6 +47,7 @@
 
 .card{
     width: min-content;
+    height: max-content;
     position: relative;
     padding: 10px;
     margin: 0 10px;
@@ -70,7 +71,7 @@
 
 .card .card-img img{
     width: 100%;
-    overflow: hidden;
+    height: 100%;
 }
 /* Efecto del card */
 .card:hover .card-img img{
@@ -80,6 +81,7 @@
 .card-detail{
     height: 120px;
     padding: 10px;
+    margin-bottom: 65px;
 }
 
 .card .card-detail h3{
@@ -98,6 +100,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: 5px;
 }
 
 .price{

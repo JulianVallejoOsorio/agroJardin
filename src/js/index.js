@@ -35,7 +35,7 @@ function renderProductos() {
       </div>
       <div class="card-button">
         <span class="price">$${p.precio}</span>
-        <button class="car-btn" onclick="agregarAlCarrito(${p.id})">Agregar al carrito</button>
+        <button class="car-btn" onclick="agregarAlCarrito(${p.id})"><i class="fas fa-shopping-cart"></i></button>
       </div>
     `;
     container.appendChild(card);
