@@ -140,6 +140,31 @@
     cursor: pointer;
 }
 
+/* Media query para pantallas menores a 768px (tablets y móviles) */
+@media (max-width: 768px) {
+  .contenido {
+    flex-direction: column; /* apilar verticalmente */
+    margin: 20px auto; /* menos margen vertical */
+  }
+
+  .mostrador .fila {
+    flex-direction: column; /* apilar los items verticalmente */
+    margin-bottom: 20px;
+  }
+
+  .mostrador .fila .item {
+    max-width: 100%;  /* que ocupe todo el ancho */
+    height: auto;     /* altura automática */
+    margin: 10px 0;   /* margen vertical entre items */
+    padding: 20px;    /* menos padding para móvil */
+  }
+
+  .mostrador .fila .item img {
+    width: 100%;     /* imagenes que ocupen todo el ancho del contenedor */
+    height: auto;
+  }
+}
+
 
 
 
