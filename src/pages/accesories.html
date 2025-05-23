@@ -15,179 +15,180 @@
 
 <body>
 
-<!-- Navbar agregada desde rama main -->
-<header class="header">
-    <section class="headerInfo">
-        <p>Recuerda que nuestras herramientas están diseñadas para facilitar tu trabajo en el campo. ¡Consulta
-            nuestros catálogos y aprende más sobre cada producto!</p>
-    </section>
-    <section class="container_navbar">
-        <nav class="navbar container">
-            <a href="/index.html" class="navbar_logo">
-                <img src="/src/images/logo/logo.png" alt="logo de la empresa">
-            </a>
-            <div class="navbar_nav">
-                <ul class="navbar_links"> 
-                    <li class="navItems">
-                        <a href="#">Inicio</a>
-                    </li>
-                    <li class="navItems">
-                        <a href="#">Catálogo</a>
-                    </li>
-                    <li class="navItems">
-                        <a href="#">Sobre nosotros</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar_tools">
-                <ul class="navbar_tools-icons">
-                    <li class="navbar_icons">
-                        <a href="#">
-                            <img src="/src/images/svg_icons/heart.svg" alt="Favoritos">
-                        </a>
-                    </li>
-                    <li class="navbar_icons">
-                        <a href="/src/pages/shoppingcar.html">
-                            <img src="/src/images/svg_icons/shopping-cart.svg" alt="Carrito">
-                        </a>
-                    </li>
-                    <li class="navbar_icons">
-                        <a href="#">
-                            <img src="/src/images/svg_icons/user.svg" alt="Usuario">
-                        </a>
-                    </li>
-                </ul>
-                <button class="navbar__toogle-btn">
-                    <img src="/src/images/svg_icons/menu.svg" alt="boton de menu">
-                </button>
-                <div class="mobile">
-                    <ul class="navbar_links-mobile">
-                        <li class="navItems-mobile">
+    <!-- Navbar agregada desde rama main -->
+    <header class="header">
+        <section class="headerInfo">
+            <p>Recuerda que nuestras herramientas están diseñadas para facilitar tu trabajo en el campo. ¡Consulta
+                nuestros catálogos y aprende más sobre cada producto!</p>
+        </section>
+        <section class="container_navbar">
+            <nav class="navbar container">
+                <a href="/index.html" class="navbar_logo">
+                    <img src="/src/images/logo/logo.png" alt="logo de la empresa">
+                </a>
+                <div class="navbar_nav">
+                    <ul class="navbar_links">
+                        <li class="navItems">
                             <a href="#">Inicio</a>
                         </li>
-                        <li class="navItems-mobile">
+                        <li class="navItems">
                             <a href="#">Catálogo</a>
                         </li>
-                        <li class="navItems-mobile">
+                        <li class="navItems">
                             <a href="#">Sobre nosotros</a>
-                        </li>
-                        <li class="navItems-mobile buttons">
-                            <a href="#">Iniciar sesión</a>
-                        </li>
-                        <li class="navItems-mobile buttons">
-                            <a href="#">Favoritos</a>
-                        </li>
-                        <li class="navItems-mobile buttons">
-                            <a href="/src/pages/shoppingcar.html">Carrito</a>
                         </li>
                     </ul>
                 </div>
-            </div>
-        </nav>
-    </section>
-</header>
+                <div class="navbar_tools">
+                    <ul class="navbar_tools-icons">
+                        <li class="navbar_icons">
+                            <a href="#">
+                                <img src="/src/images/svg_icons/heart.svg" alt="Favoritos">
+                            </a>
+                        </li>
+                        <li class="navbar_icons">
+                            <a href="/src/pages/shoppingcar.html">
+                                <img src="/src/images/svg_icons/shopping-cart.svg" alt="Carrito">
+                            </a>
+                        </li>
+                        <li class="navbar_icons">
+                            <a href="#">
+                                <img src="/src/images/svg_icons/user.svg" alt="Usuario">
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="navbar__toogle-btn">
+                        <img src="/src/images/svg_icons/menu.svg" alt="boton de menu">
+                    </button>
+                    <div class="mobile">
+                        <ul class="navbar_links-mobile">
+                            <li class="navItems-mobile">
+                                <a href="#">Inicio</a>
+                            </li>
+                            <li class="navItems-mobile">
+                                <a href="#">Catálogo</a>
+                            </li>
+                            <li class="navItems-mobile">
+                                <a href="#">Sobre nosotros</a>
+                            </li>
+                            <li class="navItems-mobile buttons">
+                                <a href="#">Iniciar sesión</a>
+                            </li>
+                            <li class="navItems-mobile buttons">
+                                <a href="#">Favoritos</a>
+                            </li>
+                            <li class="navItems-mobile buttons">
+                                <a href="/src/pages/shoppingcar.html">Carrito</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </header>
 
-<!-- Accesories --> 
+    <!-- Accesories -->
 
-<section class="contenido">
-    <div class="mostrador" id="mostrador">
-        <div class="fila">
-            <div class="item" onclick="cargar(this)">
-                <div class="contenedor-foto">
-                    <img src="/src/images/imgs_Accesorios/Nylon.png" alt="">
-                </div>
-                <p class="descripcion">NYLON GUADAÑA GROWAY LINE D3MM</p>
-                <span class="precio">$ 35.700</span>
-            </div>
-            <div class="item" onclick="cargar(this)">
-                <div class="contenedor-foto">
-                    <img src="/src/images/imgs_Accesorios/CuchillaGuadaña.png" alt="">
-                </div>
-                <p class="descripcion">CUCHILLA PARA GUADAÑA 2 PUNTAS #2</p>
-                <span class="precio">$ 30.000</span>
-            </div>
-            <div class="item" onclick="cargar(this)">
-                <div class="contenedor-foto">
-                    <img src="/src/images/imgs_Accesorios/Cabezal.png" alt="">
-                </div>
-                <p class="descripcion">CABEZAL GUADAÑA MULTIHILOS 6 HILOS</p>
-                <span class="precio">$ 55.000</span>
-            </div>
-            <div class="item" onclick="cargar(this)">
-                <div class="contenedor-foto">
-                    <img src="/src/images/imgs_Accesorios/CabezalBig.png" alt="">
-                </div>
-                <p class="descripcion">CABEZAL GUADAÑA BIG CUTTER TOP</p>
-                <span class="precio">$ 89.400</span>
-            </div>
-        </div>
-        <div class="fila">
-            <div class="item" onclick="cargar(this)">
-                <div class="contenedor-foto">
-                    <img src="/src/images/imgs_Accesorios/MascaraProteccion.png" alt="">
-                </div>
-                <p class="descripcion">MÁSCARA PROTECCIÓN GROWAY PVC</p>
-                <span class="precio">$ 50.000</span>
-            </div>
-            <div class="item" onclick="cargar(this)">
-                <div class="contenedor-foto">
-                    <img src="/src/images/imgs_Accesorios/Tijerasdepodar.png" alt="">
-                </div>
-                <p class="descripcion">TIJERAS DE PODAR</p>
-                <span class="precio">$ 220.600</span>
-            </div>
-            <div class="item" onclick="cargar(this)">
-                <div class="contenedor-foto">
-                    <img src="/src/images/imgs_Accesorios/PodadoraAltura.png" alt="">
-                </div>
-                <p class="descripcion">PODADORA ALTURA TRIPLE ACCIÓN DE POLEA</p>
-                <span class="precio">$ 275.000</span>
-            </div>
-            <div class="item" onclick="cargar(this)">
-                <div class="contenedor-foto">
-                    <img src="/src/images/imgs_Accesorios/AlambredePuas.png" alt="">
-                </div>
-                <p class="descripcion">ALAMBRE PÚAS HÍBIRDO C12X400 FARMER</p>
-                <span class="precio">$ 397.900</span>
-            </div>
-        </div>
-    </div>
+    <section class="contenido">
 
-    <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
-    <div class="seleccion" id="seleccion">
-        <div class="cerrar" onclick="cerrar()">
-            &#x2715
-        </div>
-        <div class="info">
-            <img src="/src/images/imgs_Accesorios/PROXIMAMENTE.jpg" alt="" id="img">
-            <h2 id="modelo">Accesorio #1</h2>
-            <p id="descripcion">Descripción Accesorio</p>
-
-            <span class="precio" id="precio">$ 1.000.000</span>
-
+        <div class="mostrador" id="mostrador">
             <div class="fila">
-                <div class="size">
-                    <label for="">SIZE</label>
-                    <select name="" id="">
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
-                        <option value="">6</option>
-                        <option value="">7</option>
-                        <option value="">8</option>
-                        <option value="">9</option>
-                        <option value="">10</option>
-                    </select>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/Nylon.png" alt="">
+                    </div>
+                    <p class="descripcion">NYLON GUADAÑA GROWAY LINE D3MM</p>
+                    <span class="precio">$ 35.700</span>
                 </div>
-                <button>AGREGAR AL CARRITO</button>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/CuchillaGuadaña.png" alt="">
+                    </div>
+                    <p class="descripcion">CUCHILLA PARA GUADAÑA 2 PUNTAS #2</p>
+                    <span class="precio">$ 30.000</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/Cabezal.png" alt="">
+                    </div>
+                    <p class="descripcion">CABEZAL GUADAÑA MULTIHILOS 6 HILOS</p>
+                    <span class="precio">$ 55.000</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/CabezalBig.png" alt="">
+                    </div>
+                    <p class="descripcion">CABEZAL GUADAÑA BIG CUTTER TOP</p>
+                    <span class="precio">$ 89.400</span>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/MascaraProteccion.png" alt="">
+                    </div>
+                    <p class="descripcion">MÁSCARA PROTECCIÓN GROWAY PVC</p>
+                    <span class="precio">$ 50.000</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/Tijerasdepodar.png" alt="">
+                    </div>
+                    <p class="descripcion">TIJERAS DE PODAR</p>
+                    <span class="precio">$ 220.600</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/PodadoraAltura.png" alt="">
+                    </div>
+                    <p class="descripcion">PODADORA ALTURA TRIPLE ACCIÓN DE POLEA</p>
+                    <span class="precio">$ 275.000</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/AlambredePuas.png" alt="">
+                    </div>
+                    <p class="descripcion">ALAMBRE PÚAS HÍBIRDO C12X400 FARMER</p>
+                    <span class="precio">$ 397.900</span>
+                </div>
             </div>
         </div>
-    </div>
-</section>
 
-<!-- Footer -->
+        <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+        <div class="seleccion" id="seleccion">
+            <div class="cerrar" onclick="cerrar()">
+                &#x2715
+            </div>
+            <div class="info">
+                <img src="/src/images/imgs_Accesorios/PROXIMAMENTE.jpg" alt="" id="img">
+                <h2 id="modelo">Accesorio #1</h2>
+                <p id="descripcion">Descripción Accesorio</p>
+
+                <span class="precio" id="precio">$ 1.000.000</span>
+
+                <div class="fila">
+                    <div class="size">
+                        <label for="cantidadProducto">SIZE</label>
+                        <select id="cantidadProducto">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <button id="btnAgregarCarrito">AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <section class="footer_sections">
             <div class="footer_sections-container container">
@@ -299,11 +300,10 @@
         </section>
     </footer>
 
-<script src="/src/js/accesories.js"></script>
-<script src="/src/js/script.js"></script>
-<script src="/src/js/index.js"></script>
+    <script src="/src/js/accesories.js"></script>
+    <script src="/src/js/script.js"></script>
+    <script src="/src/js/index.js"></script>
 
 </body>
 
 </html>
-
