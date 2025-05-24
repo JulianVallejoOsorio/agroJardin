@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles/accesories.css">
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <link rel="stylesheet" href="/src/styles/index.css">
+    <link rel="stylesheet" href="/src/styles/keyframes.css">
+    <link rel="stylesheet" href="/src/styles/mediaquery.css">
+
+    <title>PaginaAccesorios</title>
+</head>
+
+<body>
+
+    <!-- Navbar agregada desde rama main -->
+    <header class="header">
+        <section class="headerInfo">
+            <p>Recuerda que nuestras herramientas están diseñadas para facilitar tu trabajo en el campo. ¡Consulta
+                nuestros catálogos y aprende más sobre cada producto!</p>
+        </section>
+        <section class="container_navbar">
+            <nav class="navbar container">
+                <a href="/index.html" class="navbar_logo">
+                    <img src="/src/images/logo/logo.png" alt="logo de la empresa">
+                </a>
+                <div class="navbar_nav">
+                    <ul class="navbar_links">
+                        <li class="navItems">
+                            <a href="#">Inicio</a>
+                        </li>
+                        <li class="navItems">
+                            <a href="#">Catálogo</a>
+                        </li>
+                        <li class="navItems">
+                            <a href="#">Sobre nosotros</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar_tools">
+                    <ul class="navbar_tools-icons">
+                        <li class="navbar_icons">
+                            <a href="#">
+                                <img src="/src/images/svg_icons/heart.svg" alt="Favoritos">
+                            </a>
+                        </li>
+                        <li class="navbar_icons">
+                            <a href="/src/pages/shoppingcar.html">
+                                <img src="/src/images/svg_icons/shopping-cart.svg" alt="Carrito">
+                            </a>
+                        </li>
+                        <li class="navbar_icons">
+                            <a href="#">
+                                <img src="/src/images/svg_icons/user.svg" alt="Usuario">
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="navbar__toogle-btn">
+                        <img src="/src/images/svg_icons/menu.svg" alt="boton de menu">
+                    </button>
+                    <div class="mobile">
+                        <ul class="navbar_links-mobile">
+                            <li class="navItems-mobile">
+                                <a href="#">Inicio</a>
+                            </li>
+                            <li class="navItems-mobile">
+                                <a href="#">Catálogo</a>
+                            </li>
+                            <li class="navItems-mobile">
+                                <a href="#">Sobre nosotros</a>
+                            </li>
+                            <li class="navItems-mobile buttons">
+                                <a href="#">Iniciar sesión</a>
+                            </li>
+                            <li class="navItems-mobile buttons">
+                                <a href="#">Favoritos</a>
+                            </li>
+                            <li class="navItems-mobile buttons">
+                                <a href="/src/pages/shoppingcar.html">Carrito</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </header>
+
+    <!-- Accesories -->
+
+    <section class="contenido">
+
+        <div class="mostrador" id="mostrador">
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/Nylon.png" alt="">
+                    </div>
+                    <p class="descripcion">NYLON GUADAÑA GROWAY LINE D3MM</p>
+                    <span class="precio">$ 35.700</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/CuchillaGuadaña.png" alt="">
+                    </div>
+                    <p class="descripcion">CUCHILLA PARA GUADAÑA 2 PUNTAS #2</p>
+                    <span class="precio">$ 30.000</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/Cabezal.png" alt="">
+                    </div>
+                    <p class="descripcion">CABEZAL GUADAÑA MULTIHILOS 6 HILOS</p>
+                    <span class="precio">$ 55.000</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/CabezalBig.png" alt="">
+                    </div>
+                    <p class="descripcion">CABEZAL GUADAÑA BIG CUTTER TOP</p>
+                    <span class="precio">$ 89.400</span>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/MascaraProteccion.png" alt="">
+                    </div>
+                    <p class="descripcion">MÁSCARA PROTECCIÓN GROWAY PVC</p>
+                    <span class="precio">$ 50.000</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/Tijerasdepodar.png" alt="">
+                    </div>
+                    <p class="descripcion">TIJERAS DE PODAR</p>
+                    <span class="precio">$ 220.600</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/PodadoraAltura.png" alt="">
+                    </div>
+                    <p class="descripcion">PODADORA ALTURA TRIPLE ACCIÓN DE POLEA</p>
+                    <span class="precio">$ 275.000</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="/src/images/imgs_Accesorios/AlambredePuas.png" alt="">
+                    </div>
+                    <p class="descripcion">ALAMBRE PÚAS HÍBIRDO C12X400 FARMER</p>
+                    <span class="precio">$ 397.900</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+        <div class="seleccion" id="seleccion">
+            <div class="cerrar" onclick="cerrar()">
+                &#x2715
+            </div>
+            <div class="info">
+                <img src="/src/images/imgs_Accesorios/PROXIMAMENTE.jpg" alt="" id="img">
+                <h2 id="modelo">Accesorio #1</h2>
+                <p id="descripcion">Descripción Accesorio</p>
+
+                <span class="precio" id="precio">$ 1.000.000</span>
+
+                <div class="fila">
+                    <div class="size">
+                        <label for="cantidadProducto">SIZE</label>
+                        <select id="cantidadProducto">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <button id="btnAgregarCarrito">AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <section class="footer_sections">
+            <div class="footer_sections-container container">
+                <!-- Articulo o columna del footer -->
+                <article class="footer_section">
+                    <h3 class="footer_section-title">Herramientas</h3>
+                    <!-- Listado -->
+                    <ul class="footer_section-table">
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Motosierras</a>
+                        </li>
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Cortacetos</a>
+                        </li>
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Cortacesped</a>
+                        </li>
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Machetes</a>
+                        </li>
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Azadones</a>
+                        </li>
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Picos</a>
+                        </li>
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Carretillas</a>
+                        </li>
+                    </ul>
+                </article>
+                <!-- Articulo o columna del footer -->
+                <article class="footer_section">
+                    <h3 class="footer_section-title">Accesorios</h3>
+                    <!-- Listado -->
+                    <ul class="footer_section-table">
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Guantes</a>
+                        </li>
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Botas</a>
+                        </li>
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Gafas</a>
+                        </li>
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Mascarillas</a>
+                        </li>
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Sombreros</a>
+                        </li>
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Overoles</a>
+                        </li>
+                    </ul>
+                </article>
+                <!-- Articulo o columna del footer -->
+                <article class="footer_section">
+                    <h3 class="footer_section-title">Informacion</h3>
+                    <!-- Listado -->
+                    <ul class="footer_section-table">
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Sobre nosotros</a>
+                        </li>
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Whatsapp</a>
+                        </li>
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Instagram</a>
+                        </li>
+                        <li class="footerlinks">
+                            <a href="" class="footer_link">Facebook</a>
+                        </li>
+                    </ul>
+                </article>
+                <!-- Articulo o columna del footer -->
+                <article class="footer_section">
+                    <h3 class="footer_section-title">Siguenos</h3>
+                    <!-- Botones a redes -->
+                    <div class="social_container">
+                        <a href="" class="social_icon">
+                            <img src="/src/images/svg_icons/facebookicon.svg" alt="facebook">
+                        </a>
+                        <a href="" class="social_icon">
+                            <img src="/src/images/svg_icons/instagramicon.svg" alt="instagram">
+                        </a>
+                        <a href="" class="social_icon">
+                            <img src="/src/images/svg_icons/whatsappicon.svg" alt="Whatsapp">
+                        </a>
+                    </div>
+                    <div class="suscribe_container">
+                        <h3 class="footer_section-title">Suscribete!</h3>
+                        <form action="" class="suscribe_container-form">
+                            <input type="email" name="" id="" class="suscribe_container-input input"
+                                placeholder="Ingresa tu correo electronico">
+                            <a href="" type="button"
+                                class="button button_primary suscribe_container-button">Suscribirme</a>
+                        </form>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Copyright -->
+        <section class="footer_copy">
+            <p class="footer_copy-text" id="Copyright">
+                Copyright &copy; 2025
+                Todos los derechos reservados
+            </p>
+        </section>
+    </footer>
+
+    <script src="/src/js/accesories.js"></script>
+    <script src="/src/js/script.js"></script>
+    <script src="/src/js/index.js"></script>
+
+</body>
+
+</html>
