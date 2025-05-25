@@ -1,69 +1,54 @@
-const apiUrl = 'http://127.0.0.1:5000/api/products'; // Asegúrate de que esta URL esté correcta
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".section_card");
+    const prevBtn = document.querySelector(".carrousel_control.prev");
+    const nextBtn = document.querySelector(".carrousel_control.next");
+    let currentCardIndex = 0;
+    const showCard = (index, direction) => {
 
-// Inicialización de variables
-let productos = [];
-let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-// Función para cargar los productos desde el backend
-async function cargarProductos() {
-  try {
-    const response = await fetch(apiUrl);
-    if (!response.ok) {
-      throw new Error('Error al obtener los productos');
+        cards.forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = `translateX(${direction === 'next' ? '-' : ''}100%)`;
+            card.classList.remove("show")
+        })
+
+
+        cards[index].classList.add("show")
+        setTimeout(() => {
+            cards.forEach(card => card.style.transition = "opacity 0.5s, transform 0.5s");
+            cards[index].style.opacity = "1";
+            cards[index].style.transform = "translateX(0)";
+        }, 50)
+
     }
-    productos = await response.json();
-    renderProductos();
-  } catch (error) {
-    console.error('Error en la carga de productos:', error);
-  }
-}
 
-// Función para renderizar los productos en el HTML
-function renderProductos() {
-  const container = document.getElementById('productos-container');
-  container.innerHTML = ''; // Limpiar el contenedor antes de agregar los productos
-  productos.forEach(p => {
-    const card = document.createElement('article');
-    card.className = 'card';
-    card.innerHTML = `
-      <div class="card-img">
-        <img src="${p.imagen}" alt="${p.nombre}">
-      </div>
-      <div class="card-detail">
-        <h3>${p.nombre}</h3>
-        <p>${p.descripcion}</p>
-      </div>
-      <div class="card-button">
-        <span class="price">$${p.precio}</span>
-        <button class="car-btn" onclick="agregarAlCarrito(${p.id})"><i class="fas fa-shopping-cart"></i></button>
-      </div>
-    `;
-    container.appendChild(card);
-  });
-}
+    const changeCard = (increment, direction) => {
+        currentCardIndex = (currentCardIndex + increment + cards.length) % cards.length;
+        showCard(currentCardIndex, direction)
+    }
 
-// Función para agregar un producto al carrito
-function agregarAlCarrito(id) {
-  const producto = productos.find(p => p.id === id);
-  const existe = carrito.find(p => p.id === id);
-  if (existe) {
-    existe.cantidad += 1;
-  } else {
-    carrito.push({ ...producto, cantidad: 1 });
-  }
-  guardarCarrito();
-  alert(`${producto.nombre} añadido al carrito`);
-}
+    const autoScroll = () => {
+        changeCard(1, 'prev')
+    }
 
-// Función para guardar el carrito en el LocalStorage
-function guardarCarrito() {
-  localStorage.setItem('carrito', JSON.stringify(carrito));
-}
+    nextBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        changeCard(1, 'next');
+    })
 
-// Función para cargar el carrito desde el LocalStorage
-function cargarCarrito() {
-  carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-}
+    prevBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        changeCard(-1, 'prev');
+    })
 
-// Ejecutar la función de carga de productos al cargar la página
-cargarProductos();
+    let autoScrollInterval = setInterval(autoScroll, 5000)
+
+    document.querySelector('.carrousel-section').addEventListener('mouseenter', () => {
+        clearInterval(autoScrollInterval);
+    })
+
+    document.querySelector('.carrousel-section').addEventListener('mouseleave', () => {
+        autoScrollInterval = setInterval(autoScroll, 5000)
+    })
+
+})
