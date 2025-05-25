@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         cards.forEach(card => {
             card.style.opacity = "0";
-            card.style.transform = `translateX(${direction === 'next' ? '-' : ''}100%)`;
+            card.style.transform = `translateX(${direction === 'next' ? '' : '-'}100%)`;
             card.classList.remove("show")
         })
 
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const autoScroll = () => {
-        changeCard(1, 'prev')
+        changeCard(1, 'next')
     }
 
     nextBtn.addEventListener("click", (event) => {
