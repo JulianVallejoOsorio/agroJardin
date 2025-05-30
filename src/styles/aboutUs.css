@@ -1,26 +1,395 @@
-/* Se resetea el margin y pading, ademas de importar y añadir el font family */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-/* Colores de la paleta previamente seleccionada */
-:root {
-    /* Color para el fondo de la navbar */
-    --whitegrey: #f9fafb;
-    /*color para algunos de los textos*/
-    --black: #000000;
-    /*color para el fondo de la pagina*/
-    --white: #ffffff;
-    /*color para los botones combinados con el negro*/
-    --green: #0c815e;
-    /*color para algunos de los fondos como el search*/
-    --lightgreen: #edfcf5;
-    /*color para algunos de los textos*/
-    --darkgreen: #0b5a45;
-
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f9fafb;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+:root {
+    --blanco: #ffffff;
+    --gris-claro: #f9fafb;
+    --verde-claro: #edfcf5;
+    --verde: #0c815e;
+    --verde-oscuro: #0b5a45;
+    --negro: #000000;
+}
+
+.encabezado-info {
+    background-color: var(--verde-claro);
+    text-align: right;
+    overflow: hidden;
+}
+
+.encabezado-info p {
+    padding: 5px 25px 5px 0;
+    animation: mover-texto 40s linear infinite;
+    white-space: nowrap;
+    color: var(--negro);
+    font-weight: 500;
+}
+
+@keyframes mover-texto {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(-100%); }
+}
+
+.contenedor-barra-navegacion {
+    background-color: var(--gris-claro);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.barra-navegacion {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo-barra-navegacion img {
+    max-height: 50px;
+}
+
+.enlaces-barra-navegacion {
+    display: flex;
+    list-style: none;
+}
+
+.enlaces-barra-navegacion li + li {
+    margin-left: 40px;
+}
+
+.enlaces-barra-navegacion a {
+    position: relative;
+    font-weight: 500;
+    color: var(--negro);
+}
+
+.enlaces-barra-navegacion a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--verde);
+    opacity: 0;
+    transition: .3s;
+}
+
+.enlaces-barra-navegacion a:hover::after {
+    width: 100%;
+    left: 0;
+    opacity: 1;
+}
+
+.herramientas-barra-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.herramientas-barra-navegacion img {
+    width: 25px;
+    cursor: pointer;
+}
+
+.boton-toggle-barra-navegacion {
+    display: none;
+}
+
+.seccion-nosotros {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: var(--blanco);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.izquierda-nosotros, .derecha-nosotros {
+    flex: 1;
+}
+
+.izquierda-nosotros {
+    position: relative;
+}
+
+.icono-estrella-nosotros {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    color: #000000;
+}
+
+.izquierda-nosotros img {
+    width: 100%;
+    display: block;
+   
+}
+
+.derecha-nosotros {
+    padding: 40px;
+}
+
+.titulo-nosotros {
+    font-size: 54px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #222;
+}
+
+.texto-nosotros {
+    margin-bottom: 16px;
+    color: #555;
+}
+
+.seccion-mision-vision {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+     background-color: var(--verde-claro);
+    color: #fff;
+}
+
+.columna-mision-vision {
+    flex: 1;
+    padding: 60px 30px;
+}
+
+.titulo-mision-vision {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    color: #000000;
+}
+
+.contenido-mision-vision {
+    display: flex;
+    align-items: flex-start;
+}
+
+/*pendiente por dar animacion ala imagen*/
+.izquierda-nosotros img{
+
+}
+
+
+.icono-estrella-mision-vision {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    color: #000000;
+}
+
+.texto-mision-vision {
+    color: #000000;
+}
+
+.seccion-equipo {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 60px 20px;
+    background: var(--blanco);
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 20px;
+}
+
+.introduccion-equipo {
+    grid-column: 1 / 5;
+    padding-right: 20px;
+}
+
+.titulo-equipo {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.descripcion-equipo {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.divisor-equipo {
+    width: 70px;
+    height: 4px;
+    background: #222;
+    margin-bottom: 40px;
+}
+
+.rejilla-equipo {
+    grid-column: 5 / 13;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
+.miembro-equipo img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+
+}
+
+.nombre-miembro {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.rol-miembro {
+    font-size: 14px;
+    color: #666;
+}
+
+.pie-pagina {
+    background-color: var(--verde);
+    display: flex;
+    flex-direction: column;
+}
+
+.secciones-pie-pagina {
+    background-color: var(--verde-claro);
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-secciones-pie-pagina {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.lista-seccion-pie-pagina {
+    list-style: none;
+}
+
+.titulo-seccion-pie-pagina {
+    color: var(--verde-oscuro);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.enlace-pie-pagina {
+    color: var(--negro);
+    font-size: 1.1rem;
+}
+
+.contenedor-social {
+    margin-bottom: 1rem;
+}
+
+.icono-social {
+    margin-right: 15px;
+}
+
+.icono-social img {
+    height: 28px;
+}
+
+.formulario-suscripcion {
+    display: flex;
+    flex-direction: column;
+}
+
+.entrada-suscripcion {
+    margin-bottom: 1rem;
+    border: none;
+    font-size: 1.1rem;
+    background-color: var(--blanco);
+    padding: 10px;
+    outline: none;
+    border-radius: 5px;
+}
+
+.boton {
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.boton-primario {
+    color: var(--blanco);
+    background-color: var(--verde-oscuro);
+}
+
+.enlace-pie-pagina:hover {
+    color: var(--verde-oscuro);
+}
+
+.boton-primario:hover {
+    background-color: var(--verde);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.texto-derechos {
+    text-align: center;
+    color: var(--blanco);
+    font-weight: 500;
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .seccion-nosotros, .seccion-mision-vision {
+        flex-direction: column;
+    }
+    
+    .columna-mision-vision {
+        padding: 40px 20px;
+    }
+    
+    .seccion-equipo {
+        display: block;
+    }
+    
+    .introduccion-equipo {
+        margin-bottom: 30px;
+    }
+    
+    .rejilla-equipo {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+    .boton-toggle-barra-navegacion {
+        display: block;
+    }
+    
+    .enlaces-barra-navegacion, .herramientas-barra-navegacion {
+        display: none;
+    }
+    
+    .contenedor-secciones-pie-pagina {
+        flex-direction: column;
+        align-items: center;
+    }
 }
