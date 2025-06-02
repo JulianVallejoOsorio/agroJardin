@@ -161,6 +161,8 @@
     }
 }
 
+<<<<<<< HEAD
+=======
 /* Carrousel */
 @media only screen and (max-width:1037px){
         .section_card-title{
@@ -211,3 +213,4 @@
         margin-bottom: 2px;
     }
 }
+>>>>>>> origin/main
