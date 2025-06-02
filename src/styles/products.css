@@ -143,11 +143,13 @@
 
 .info .fila button {
     height: 40px;
-    border: none;
+    border-radius: 50px;
     padding: 0 10px;
     color: #fff;
     background-color: #0c815e;
     cursor: pointer;
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Media query para pantallas menores a 768px (tablets y móviles) */

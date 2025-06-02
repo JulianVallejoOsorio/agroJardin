@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="src/styles/keyframes.css">
     <link rel="stylesheet" href="src/styles/mediaquery.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -38,10 +38,13 @@
                             <a href="#">Inicio</a>
                         </li>
                         <li class="navItems">
-                            <a href="#">Catalogo</a>
+                            <a href="src/pages/products.html">Herramientas</a>
                         </li>
                         <li class="navItems">
-                            <a href="#">Sobre nosotros</a>
+                            <a href="src/pages/accesories.html">Accesorios</a>
+                        </li>
+                        <li class="navItems">
+                            <a href="src/pages/aboutUs.html">Sobre nosotros</a>
                         </li>
                     </ul>
                 </div>
@@ -74,10 +77,13 @@
                                 <a href="#">Inicio</a>
                             </li>
                             <li class="navItems-mobile">
-                                <a href="#">Catalogo</a>
+                                <a href="src/pages/products.html">Herramientas</a>
                             </li>
                             <li class="navItems-mobile">
-                                <a href="#">Sobre nosotros</a>
+                                <a href="src/pages/accesories.html">Accesorios</a>
+                            </li>
+                            <li class="navItems-mobile">
+                                <a href="src/pages/aboutUs.html">Sobre nosotros</a>
                             </li>
                             <li class="navItems-mobile buttons">
                                 <a href="#">Iniciar sesion</a>
@@ -94,36 +100,70 @@
         </section>
     </header>
     <main>
-        <!-- Seccion de productos -->
-        <section class="product_section">
-            <h2>Herramientas</h2>
-            <!-- Contenedor -->
-            <div id="productos-container" class="products_section-container">
-                <!-- Cards -->
-            </div>
+        <section class="carrousel-section">
+            <article class="carrousel-section-cards container">
+                <div class="section_card show">
+                    <div class="section_card-content">
+                        <h1 class="section_card-title">
+                            Bienvenido a AgroJardín: Tu Tienda de Herramientas y Jardinería
+                        </h1>
+                        <p class="section_card-text">
+                            En AgroJardín trabajamos para brindarte las mejores herramientas, insumos y soluciones para tus labores agrícolas y de jardinería. Nos enfocamos en ofrecer productos de calidad, con atención personalizada y precios justos, para que encuentres todo lo que necesitás en un solo lugar.
+                        </p>
+                        <div class="section_card-buttons">
+                            <a href="src/pages/products.html" class="button button_secondary suscribe_container-button">Comprar ahora</a>
+                            <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="button button_primary suscribe_container-button">Contáctanos</a>
+                        </div>
+                    </div>
+                    <div class="section_card-imgs">
+                        <div class="section_card-img">
+                            <img src="https://github.com/JulianVallejoOsorio/agroJardin/blob/main/src/images/carrousel_images/CarrouselIni.jpg?raw=true" alt="Jardineria">
+                        </div>
+                    </div>
+                </div>
+                <div class="section_card">
+                    <div class="section_card-content">
+                        <h2 class="section_card-title">
+                            Herramientas para el Trabajo Diario
+                        </h2>
+                        <p class="section_card-text">
+                            Contamos con una amplia variedad de herramientas agrícolas diseñadas para facilitar tu trabajo diario. Desde palas, rastrillos y azadones hasta tijeras de podar y motosierras, cada producto está pensado para ofrecerte resistencia, comodidad y eficiencia en el campo o el jardín.
+                        </p>
+                        <div class="section_card-buttons">
+                            <a href="src/pages/products.html" class="button button_secondary suscribe_container-button">Comprar ahora</a>
+                        </div>
+                    </div>
+                    <div class="section_card-imgs">
+                        <div class="section_card-img">
+                            <img src="https://github.com/JulianVallejoOsorio/agroJardin/blob/main/src/images/carrousel_images/CarrouselTools.jpg?raw=true" alt="Herramientas">
+                        </div>
+                    </div>
+                </div>
+                <div class="section_card">
+                    <div class="section_card-content">
+                        <h2 class="section_card-title">
+                            Accesorios de Protección y Comodidad
+                        </h2>
+                        <p class="section_card-text">
+                            Equipate con los mejores accesorios de protección y trabajo para tus labores agro. Guantes, botas, gafas, mascarillas y ropa especializada para garantizar tu seguridad y confort mientras cuidás de la tierra.
+                        </p>
+                        <div class="section_card-buttons">
+                            <a href="src/pages/accesories.html" class="button button_secondary suscribe_container-button">Comprar ahora</a>
+                        </div>
+                    </div>
+                    <div class="section_card-imgs">
+                        <div class="section_card-img">
+                            <img src="https://github.com/JulianVallejoOsorio/agroJardin/blob/main/src/images/carrousel_images/CarrouselAccesories.jpg?raw=true" alt="Accesorios">
+                        </div>
+                    </div>
+                </div>
+                <div class="carrousel-control">
+                    <a href="#" class="carrousel_control prev"><i class="bi bi-arrow-left"></i></a>
+                    <a href="#" class="carrousel_control next"><i class="bi bi-arrow-right"></i></a>
+                    
+                </div>
+            </article>
         </section>
-        <!-- Seccion de Accesorios -->
-        <section class="product_section">
-            <h2>Accesorios</h2>
-            <!-- Contenedor -->
-            <div class="products_section-container">
-                <!-- Card -->
-                <!-- <article class="card">
-                    <div class="card-img">
-                        <img src="src/images/carrousel_images/motosierra.png" alt="productoimagen">
-                    </div>
-                    <div class="card-detail">
-                        <h3>nombreProducto</h3>
-                        <p>Descripcion del producto</p>
-                    </div>
-                    <div class="card-button">
-                        <span class="price">$7000</span>
-                        <button class="car-btn">Comprar</button>
-                    </div>
-                </article> -->
-            </div>
-        </section>
-
     </main>
     <aside>
     </aside>
@@ -193,13 +233,13 @@
                             <a href="" class="footer_link">Sobre nosotros</a>
                         </li>
                         <li class="footerlinks">
-                            <a href="" class="footer_link">Whatsapp</a>
+                            <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="footer_link">Whatsapp</a>
                         </li>
                         <li class="footerlinks">
-                            <a href="" class="footer_link">Instagram</a>
+                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer_link">Instagram</a>
                         </li>
                         <li class="footerlinks">
-                            <a href="" class="footer_link">Facebook</a>
+                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer_link">Facebook</a>
                         </li>
                     </ul>
                 </article>
@@ -208,13 +248,13 @@
                     <h3 class="footer_section-title">Siguenos</h3>
                     <!-- Botones a redes -->
                     <div class="social_container">
-                        <a href="" class="social_icon">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social_icon">
                             <img src="src/images/svg_icons/facebookicon.svg" alt="facebook">
                         </a>
-                        <a href="" class="social_icon">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social_icon">
                             <img src="src/images/svg_icons/instagramicon.svg" alt="instagram">
                         </a>
-                        <a href="" class="social_icon">
+                        <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="social_icon">
                             <img src="src/images/svg_icons/whatsappicon.svg" alt="Whatsapp">
                         </a>
                     </div>
@@ -223,7 +263,7 @@
                         <form action="" class="suscribe_container-form">
                             <input type="email" name="" id="" class="suscribe_container-input input"
                                 placeholder="Ingresa tu correo electronico">
-                            <a href="" type="button"
+                            <a href="#" type="button"
                                 class="button button_primary suscribe_container-button">Suscribirme</a>
                         </form>
                     </div>
