@@ -1,4 +1,4 @@
-      document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".section_card");
     const prevBtn = document.querySelector(".carrousel_control.prev");
     const nextBtn = document.querySelector(".carrousel_control.next");

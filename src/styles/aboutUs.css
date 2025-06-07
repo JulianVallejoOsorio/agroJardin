@@ -188,28 +188,7 @@
           color: #666;
       }
 
-      @media (max-width: 768px) {
-          .seccion-nosotros, .seccion-mision-vision {
-              flex-direction: column;
-          }
-          
-          .columna-mision-vision {
-              padding: 40px 20px;
-          }
-          
-          .seccion-equipo {
-              display: block;
-          }
-          
-          .introduccion-equipo {
-              margin-bottom: 30px;
-          }
-          
-          .rejilla-equipo {
-              display: grid;
-              grid-template-columns: 1fr;
-          }
-      }
+    
       /* Se resetea el margin y pading, ademas de importar y añadir el font family */
 
 
