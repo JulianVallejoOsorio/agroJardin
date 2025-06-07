@@ -51,6 +51,12 @@
     cursor: pointer;
     border-radius: 5px;
     transition: .3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* centra horizontalmente */
+    justify-content: center;  /* centra verticalmente */
+    text-align: center;
+    gap: 15px; 
 }
 .mostrador .fila .item:hover{
     background-color: #e6e6e6;
@@ -58,6 +64,8 @@
 .mostrador .fila .item img{
     width: 100%;
     margin: 20px 0;
+    object-fit: contain;  /* evita que la imagen se deforme */
+    margin: 0;
 }
 .mostrador .fila .item .descripcion{
     color: #707070;
