@@ -59,7 +59,7 @@
     gap: 15px; 
 }
 .mostrador .fila .item:hover{
-    background-color: #e6e6e6;
+    background-color: #ffffff;
 }
 .mostrador .fila .item img{
     width: 100%;
@@ -68,7 +68,7 @@
     margin: 0;
 }
 .mostrador .fila .item .descripcion{
-    color: #707070;
+    color: #0b5a45; /* color de la descripcion */
     font-weight: bold;
 }
 .mostrador .fila .item .precio{
@@ -80,7 +80,9 @@
     transition: .5s ease;
     opacity: 0;
     width: 0%;
-    border: 1px solid #ccc;
+    background-color: #ffffff;
+    border: 2px solid #0c815e;
+    border-radius: 6px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -140,6 +142,35 @@
     color: #fff;
     background-color: #0c815e;
     cursor: pointer;
+}
+
+.card {
+    box-sizing: border-box;
+    width: 190px;
+    height: 254px;
+    background: rgb(255, 255, 255);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+}
+
+.card:hover {
+    border: 1px solid #0c815e;
+    transform: scale(1.05);
+}
+
+.card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
 }
 
 /* Media query para pantallas menores a 768px (tablets y móviles) */
